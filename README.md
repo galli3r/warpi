@@ -1,4 +1,5 @@
-# Warpi installation
+# Warpi installation[^1]
+[^1] modified Version. The original came from designer2k2
 
 ## Preparation
 1. Download Kali Raspberry [Image](https://www.kali.org/get-kali/#kali-arm)
