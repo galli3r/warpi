@@ -132,7 +132,7 @@ ACTION=="add", SUBSYSTEM=="net", SUBSYSTEMS=="usb",  KERNELS=="1-1.3",       NAM
 ACTION=="add", SUBSYSTEM=="net", SUBSYSTEMS=="usb",  KERNELS=="1-1.5",       NAME="wlan4"
 ```
 ## the OLED script to boot and 64 bit hacks
-> https://github.com/designer2k2/warpi/blob/master/warpigui.py
+> https://raw.githubusercontent.com/galli3r/warpi/main/warpigui.py
 
 cp arial.ttf and Minecraftia.ttf
 
