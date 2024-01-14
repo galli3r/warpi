@@ -174,7 +174,7 @@ copy the kismet_site.conf to /etc/kismet, modify the wlan and bluetooth sources.
 find out the right Volume from the USB Stick
 `ls /dev/sd*`
 
-`sudo blkid /dev/sda1`
+`sudo blkid /dev/sda1`<br>
 /dev/sda1: UUID="2xxx-6xxx" BLOCK_SIZE="512" TYPE="vfat" PARTUUID="1d141651-01"
 
 `sudo mkdir -p /media/usb`
