@@ -2,7 +2,7 @@
 # encoding=utf-8
 
 # Menu for the wigle/replacement device
-# https://www.designer2k2.at 2021-2022
+# original from: https://www.designer2k2.at 2021-2022
 #
 # This is working on a rpi4 with kali 64bit os
 #
@@ -82,7 +82,7 @@ Page = 1
 def InterruptLeft(_):
     global Page
     # Loop over Pager 1,2,3
-    if Page > 2:
+    if Page > 3:
         Page = 1
     else:
         Page = Page + 1
@@ -144,8 +144,8 @@ draw = ImageDraw.Draw(image)
 draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
 # Load a font
-font = ImageFont.truetype("/home/kali/Minecraftia.ttf", 8)
-fontbig = ImageFont.truetype("/home/kali/Arial.ttf", 24)
+font = ImageFont.truetype("/home/kali/fonts/Minecraftia.ttf", 8)
+fontbig = ImageFont.truetype("/home/kali/fonts/Arial.ttf", 24)
 
 logging.debug("Display setup done")
 
@@ -302,7 +302,8 @@ while looping:
                     fill=255,
                 )
             except Exception as e:
-                logging.error(f"An exception occurred {e}")
+                pass
+#                logging.error(f"An exception occurred {e}")
 
     if Page == 2:
         # Page 2 shows the IP from the system
@@ -369,6 +370,37 @@ while looping:
             fill=255,
         )
 
+    if Page == 4:
+        # Page 4 Testpage
+        if gpsrun:
+                resp = requests.get(
+                    "http://root:toor@localhost:2501/system/status.json"
+                )
+                data = resp.json()
+                devices = data["kismet.system.devices.count"]
+                kismetmemory = data["kismet.system.memory.rss"] / 1024
+                draw.text(
+                    (0, 20),
+                    f"D {devices:>7}",
+                    font=fontbig,
+                    fill=255)
+                draw.text(
+                    (0, 44),
+                    f"Kismet mem: {kismetmemory:>4.0f}mb",
+                    font=font,
+                    fill=255,
+                )
+        else:
+                draw.text(
+                (0, 20),
+                f"keine Daten",
+                font=fontbig,
+                fill=255
+                )
+                disp.image(image)
+                disp.show()
+
+
     if not autostarted:
         if autostart > 0:
             autostart = autostart - 1
@@ -381,7 +413,7 @@ while looping:
     disp.image(image)
     disp.show()
 
-    # wait a bit:
+    # wait gpsrun:gpsrun:a bit:
     sleep(sleeptime)
 
 while True:
