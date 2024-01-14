@@ -16,7 +16,7 @@ apt -y autoremove
 echo "upgrade all to have the latest and greatest"
 apt -y upgrade
 echo "Download warpi script"
-wget https://github.com/designer2k2/warpi/raw/master/warpigui.py
+wget https://github.com/galli3r/warpi/blob/main/warpigui.py
 wget https://github.com/galli3r/warpi/blob/main/requirements.txt
 echo "Install warpi python requirements"
 pip3 install -r requirements.txt
