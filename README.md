@@ -134,7 +134,8 @@ ACTION=="add", SUBSYSTEM=="net", SUBSYSTEMS=="usb",  KERNELS=="1-1.5",       NAM
 ## the OLED script to boot and 64 bit hacks
 > https://raw.githubusercontent.com/galli3r/warpi/main/warpigui.py
 
-cp arial.ttf and Minecraftia.ttf
+copy fonts to /home/kali/fonts<br>
+[arial.ttf](https://duckduckgo.com/?t=ftsa&q=arial.ttf&atb=v362-1&ia=web) and [Minecraftia.ttf](https://duckduckgo.com/?q=Minecraftia.ttf&t=ftsa&atb=v362-1&ia=web)
 
 > https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/#systemd
 
